@@ -1,0 +1,38 @@
+<app-total-data></app-total-data>
+
+<div class="container mt-3">
+    <section>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">State</th>
+                    <th scope="col">Total Cases</th>
+                    <th scope="col">Active Cases</th>
+                    <th scope="col">Deaths</th>
+                    <th scope="col">Cured</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr (click)="getState(state.state)" *ngFor="let state of stateData" style="cursor: pointer;">
+                    <th scope="row dropdown-toggle">
+                        {{state.state}}
+                    </th>
+                    <td>{{state.confirmed}}
+                        <sup id="sup-IN-MH-c" style="font-size:10px;color:red">+{{state.cChanges}}
+                        </sup></td>
+                    <td>{{state.active}}</td>
+                    <td>{{state.deaths}}<sup id="sup-IN-MH-d" style="font-size:10px;color:red">+{{state.dChanges}}</sup>
+                    </td>
+                    <td>{{state.recovered}}
+                        <sup id="sup-IN-MH-r" style="font-size:10px;color:green">+{{state.rChanges}}
+                        </sup></td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+
+    </section>
+
+</div>

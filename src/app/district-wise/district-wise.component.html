@@ -1,0 +1,41 @@
+<app-total-data></app-total-data>
+<div class="container mt-3">
+    <section>
+        <h2>{{stateName}}</h2>
+        <table class="table table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">district</th>
+                    <th scope="col">Total Cases</th>
+                    <th scope="col">Active Cases</th>
+                    <th scope="col">Deaths</th>
+                    <th scope="col">Cured</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr (click)="onSelect(district.district,district.confirmed,district.active,district.deceased,district.recovered)"
+                    *ngFor="let district of districts" style="cursor: pointer;">
+                    <th scope="row dropdown-toggle">{{district.district}}
+                    </th>
+                    <td>{{district.confirmed}}
+                        <sup style="font-size:10px;color:red">
+                            +{{district.delta.confirmed}}
+                        </sup>
+                    </td>
+                    <td>{{district.active}}
+                    </td>
+                    <td>{{district.deceased}}
+                        <sup style="font-size:10px;color:red">
+                            +{{district.delta.deceased}}
+                        </sup>
+                    </td>
+                    <td>{{district.recovered}}
+                        <sup style="font-size:10px;color:green">
+                            +{{district.delta.recovered}}
+                        </sup>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>

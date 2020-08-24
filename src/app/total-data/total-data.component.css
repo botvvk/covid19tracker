@@ -1,0 +1,26 @@
+.text-center {
+    text-align: center!important;
+}
+.row {
+    margin: 0!important;
+}
+.cc {
+    font-size: 18px;
+    font-weight: 700;
+    color: red;
+}
+.rc {
+    font-size: 18px;
+    font-weight: 700;
+    color: green;
+}
+.ac {
+    font-size: 18px;
+    font-weight: 700;
+    color: orange;
+}
+.dc {
+    font-size: 18px;
+    font-weight: 700;
+    color: grey;
+}
