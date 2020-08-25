@@ -13,6 +13,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DistrictWiseComponent } from './district-wise/district-wise.component';
 import { AboutComponent } from './about/about.component';
 import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
+import { DropdownDirective } from './directive/dropdown.directive';
+import { OrderByPipe } from './shared/pipe/order-by.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.componen
     DistrictWiseComponent,
     AboutComponent,
     DoughnutChartComponent,
+    DropdownDirective,
+    OrderByPipe,
 
   ],
   imports: [

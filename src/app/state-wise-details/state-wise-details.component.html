@@ -1,8 +1,25 @@
 <app-total-data></app-total-data>
 
 <div class="container mt-3">
+
+
     <section>
-        <table class="table table-striped">
+        <!-- <div>
+            <ul type="none">
+                <li class="dropdown float-right" appDropdown #r="appDropDown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Sort-by
+                    </button>
+                    <ul class="dropdown-menu" [ngClass]="{'show':r.isOpen}">
+                        <li class="h5" (click)="onSelect(list)"><a style="cursor: pointer;">Name</a></li>
+                        <li class="h5" (click)="onSelect(list)"><a style="cursor: pointer ;">TotalCases</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div><br> -->
+        <table class="table table-striped mt-4">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">State</th>
@@ -12,8 +29,9 @@
                     <th scope="col">Cured</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr (click)="getState(state.state)" *ngFor="let state of stateData" style="cursor: pointer;">
+            <tbody #list>
+                <tr (click)="getState(state.state)" *ngFor="let state of stateData | orderBy:'state' "
+                    style="cursor: pointer;">
                     <th scope="row dropdown-toggle">
                         {{state.state}}
                     </th>
@@ -31,8 +49,5 @@
 
             </tbody>
         </table>
-
-
     </section>
-
 </div>

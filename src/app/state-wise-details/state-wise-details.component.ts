@@ -18,7 +18,7 @@ export class StateWiseDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.stateDistrictData();
   }
-  
+
 
   stateDistrictData() {
     this.dataService.getData().subscribe(response => {
@@ -29,5 +29,8 @@ export class StateWiseDetailsComponent implements OnInit {
   }
   getState(state) {
     this.router.navigate(['/state', state])
+  }
+  onSelect(event) {
+    console.log(event)
   }
 }
