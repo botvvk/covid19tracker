@@ -4,7 +4,7 @@
 
 
     <section>
-        <!-- <div>
+        <div>
             <ul type="none">
                 <li class="dropdown float-right" appDropdown #r="appDropDown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
@@ -12,13 +12,13 @@
                         Sort-by
                     </button>
                     <ul class="dropdown-menu" [ngClass]="{'show':r.isOpen}">
-                        <li class="h5" (click)="onSelect(list)"><a style="cursor: pointer;">Name</a></li>
-                        <li class="h5" (click)="onSelect(list)"><a style="cursor: pointer ;">TotalCases</a></li>
+                        <li class="h5" (click)="onSelect('name')"><a style="cursor: pointer;">Name</a></li>
+                        <li class="h5" (click)="onSelect('totalCases')"><a style="cursor: pointer ;">TotalCases</a></li>
                     </ul>
                 </li>
             </ul>
 
-        </div><br> -->
+        </div><br>
         <table class="table table-striped mt-4">
             <thead class="thead-dark">
                 <tr>
@@ -30,8 +30,7 @@
                 </tr>
             </thead>
             <tbody #list>
-                <tr (click)="getState(state.state)" *ngFor="let state of stateData | orderBy:'state' "
-                    style="cursor: pointer;">
+                <tr (click)="getState(state.state)" *ngFor="let state of stateData" style="cursor: pointer;">
                     <th scope="row dropdown-toggle">
                         {{state.state}}
                     </th>
